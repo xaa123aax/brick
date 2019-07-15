@@ -95,9 +95,10 @@ public class BallScript : MonoBehaviour
             //如果小於等於0 isDead為真
             if (GameManager.playerLives <= 0)
             {
-                PlayerScript.isDead = true;
+                //PlayerScript.isDead = true;
+                GameStatus.Instance.now = GameStatus.Status.Stop;
             }
-         
+
         }
 
 

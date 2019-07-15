@@ -43,19 +43,21 @@ public class GameManager : MonoBehaviour
         Score();
 
         //如果play死了
-        if (PlayerScript.isDead)
+        if (GameStatus.Instance.now == GameStatus.Status.Stop)
         {
             player.SetActive(false);
             BALL.SetActive(false);
             restartButton.gameObject.SetActive(true);
 
         }
+        //如果按下r 刷新當前關卡
         if (Input.GetKeyDown(KeyCode.R))
         {
             CreateBrick.colormax = CreateBrick.colormax - 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             BrickScript.bricksbreak = 0;
         }
+        //如果按下w 刷新所有關卡
         if (Input.GetKeyDown(KeyCode.W))
         {
             CreateBrick.colormax = 1;

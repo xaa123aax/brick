@@ -6,15 +6,21 @@ public class CreateBrick : MonoBehaviour
 {
     public int color;
     public List<Transform> bricks;
+    //設定磚塊等級最大值
     public static int colormax =1;
 
     void Start()
-    {   
+    {
+        //磚塊等級最大值+1
         colormax = colormax + 1;
+        //設一個序列
         bricks = new List<Transform>();
+        //產生方塊
         for (int i = 0; i < 12; i++)
         {
+            //隨機選擇介於1至最大值
             color = Random.Range(1, colormax);
+            //選擇產生的
             switch (color)
             {
                 case 1:
@@ -36,23 +42,29 @@ public class CreateBrick : MonoBehaviour
             }
         }
     }
+    //選擇x的位置
     float BrickPositionX()
     {
+        //如果是計數0 回到0
         if (bricks.Count == 0)
         {
             return 0;
         }
-        return Mathf.Floor(bricks.Count /4  )*3;
+        //否則回到計數/4的無條件捨去整數*3
+        return Mathf.Floor(bricks.Count / 4) * 3;
     }
+    //選擇y的位置
     float BrickPositionY()
     {
+        //如果是計數0 回到0
         if (bricks.Count == 0)
         {
             return 0;
         }
+        //否則回到計數取4的餘數
         return bricks.Count % 4;
     }
-
+    //產生方塊
     void SpawnBrick()
     {
         GameObject newBrick = Instantiate(Resources.Load<GameObject>("redbrick"));
