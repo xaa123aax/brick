@@ -60,11 +60,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameStatus.cs" />
     <Compile Include="Assets\Scripts\BallScript.cs" />
     <Compile Include="Assets\Scripts\BrickScript.cs" />
     <Compile Include="Assets\Scripts\CreateBrick.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GameStatus.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>V:/108-中教大-數位-邱奕畯/Brick/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

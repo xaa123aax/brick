@@ -6,12 +6,11 @@ TagManager:
   tags:
   - ball
   - player
-  - star
-  - star3
   - bonus1
   - bonus2
   - bonus3
-  - star2
+  - bonus4
+  - bonus5
   layers:
   - Default
   - TransparentFX
@@ -48,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: ui
+    uniqueID: 425190705
     locked: 0

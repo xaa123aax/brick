@@ -30,14 +30,26 @@ public class BrickScript : MonoBehaviour
     {
         GameObject newStar2 = Instantiate(Resources.Load<GameObject>("bonus2"));
         newStar2.transform.position = gameObject.transform.position;
-  
+
     }
     //產生綠星星
     void SpawnStar3()
     {
         GameObject newStar3 = Instantiate(Resources.Load<GameObject>("bonus3"));
         newStar3.transform.position = gameObject.transform.position;
-     
+
+    }
+    void SpawnStar4()
+    {
+        GameObject newStar4 = Instantiate(Resources.Load<GameObject>("bonus4"));
+        newStar4.transform.position = gameObject.transform.position;
+
+    }
+    void SpawnStar5()
+    {
+        GameObject newStar5 = Instantiate(Resources.Load<GameObject>("bonus5"));
+        newStar5.transform.position = gameObject.transform.position;
+
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -74,7 +86,7 @@ public class BrickScript : MonoBehaviour
                 if (numberOfHits > 0)
                 {
                     //星星隨機
-                    starcolor = Random.Range(1, 4);
+                    starcolor = Random.Range(1, 5);
                     switch (starcolor)
                     {
                         case 1:
@@ -87,7 +99,13 @@ public class BrickScript : MonoBehaviour
                             SpawnStar3();
 
                             break;
+                        case 4:
+                            SpawnStar4();
 
+                            break;
+                        case 5:
+                            SpawnStar5();
+                            break;
                         default:
 
                             break;

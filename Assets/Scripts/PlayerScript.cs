@@ -35,7 +35,8 @@ public class PlayerScript : MonoBehaviour
         {
             //破壞星星
             other.gameObject.SetActive(false);
-            //速度變兩倍           
+            //大小變1.2倍 
+            transform.localScale +=  new Vector3(0.2f, 0, 0);
 
         }
         if (other.gameObject.CompareTag("bonus3"))
@@ -45,6 +46,24 @@ public class PlayerScript : MonoBehaviour
             //速度變1/2倍 
 
             playerVelocity = playerVelocity / 2;
+
+
+        }
+        if (other.gameObject.CompareTag("bonus4"))
+        {
+            //破壞星星
+            other.gameObject.SetActive(false);
+            //大小變0.8倍 
+            transform.localScale += new Vector3(-0.2f, 0, 0);
+
+
+        }
+        if (other.gameObject.CompareTag("bonus5"))
+        {
+            //破壞星星
+            other.gameObject.SetActive(false);
+            //速度變1/2倍 
+
 
 
         }

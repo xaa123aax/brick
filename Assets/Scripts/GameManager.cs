@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         //如果按下r 刷新當前關卡
         if (Input.GetKeyDown(KeyCode.R))
         {
-            CreateBrick.colormax = CreateBrick.colormax;
+            CreateBrick.colormax = CreateBrick.colormax-1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             BrickScript.bricksbreak = 0;
         }
