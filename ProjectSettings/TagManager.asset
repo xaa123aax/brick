@@ -7,6 +7,11 @@ TagManager:
   - ball
   - player
   - star
+  - star3
+  - bonus1
+  - bonus2
+  - bonus3
+  - star2
   layers:
   - Default
   - TransparentFX
@@ -16,8 +21,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - button
+  - bricks
   - 
   - 
   - 

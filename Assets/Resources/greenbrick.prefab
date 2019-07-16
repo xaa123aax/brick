@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2856026172940414419}
   - component: {fileID: 4607212144847033879}
   - component: {fileID: 4994130426517925069}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: greenbrick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,4 +121,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitsToKill: 3
   points: 30
-  starcolor: 0

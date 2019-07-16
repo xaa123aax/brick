@@ -56,9 +56,12 @@ public class BrickScript : MonoBehaviour
                 GameManager.playerPoints += points;
                 //破壞數+1
                 bricksbreak = bricksbreak + 1;
-                Debug.Log(bricksbreak);
-                Debug.Log(CreateBrick.colormax);
-              
+                //檢查數1=當前破壞數
+                BallScript.ballbreaknumber1 = bricksbreak;
+                //將當前時間歸0
+                BallScript.timer = 0;
+
+                
                 //破壞了12個
                 if (bricksbreak == 12)
                 {

@@ -8,14 +8,18 @@ public class BallScript : MonoBehaviour
     private bool ballIsActive;
     private Vector3 ballPosition;
     private Vector2 ballInitialForce;
+    private Vector2 ballInitialForcesmall;
     public GameObject playerObject;
-  
+    public static int ballbreaknumber1;
+    public static int ballbreaknumber2;
+    private float waitTime = 20.0f;
+    public static float timer = 0.0f;
 
     void Start()
     {
         //給球一個初始的力量使遊戲開始
-        ballInitialForce = new Vector2(100.0f, 300.0f);
-
+        ballInitialForce = new Vector2(000.0f, 300.0f);
+        ballInitialForcesmall = new Vector2(30.0f, 30.0f);
         //活性一開始為 false
         ballIsActive = false;
 
@@ -25,14 +29,14 @@ public class BallScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {//如果碰到星星
-        if (other.gameObject.CompareTag("star"))
+        if (other.gameObject.CompareTag("bonus1"))
         {
             //破壞星星
             other.gameObject.SetActive(false);
             //速度變兩倍
             GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity * 2;
         }
-            if (other.gameObject.CompareTag("star2"))
+            if (other.gameObject.CompareTag("bonus2"))
             {
                 //破壞星星
                 other.gameObject.SetActive(false);
@@ -40,7 +44,7 @@ public class BallScript : MonoBehaviour
                   
 
             }
-            if (other.gameObject.CompareTag("star3"))
+            if (other.gameObject.CompareTag("bonus3"))
             {
                 //破壞星星
                 other.gameObject.SetActive(false);
@@ -52,11 +56,14 @@ public class BallScript : MonoBehaviour
         
   
     }
-    void Update()
+
+     void Update()
     {
         // 空白建噴射球
         if (Input.GetButtonDown("Jump") == true)
         {
+            //時間歸0
+            timer = 0;
             // 如果遊戲是剛開始
             if (!ballIsActive)
             {              
@@ -100,6 +107,36 @@ public class BallScript : MonoBehaviour
             }
 
         }
+
+        //時間每幀增加
+        timer += Time.deltaTime;
+
+        Debug.Log(timer);
+        Debug.Log(GetComponent<Rigidbody2D>().velocity);
+
+        //如果時間大於等待時間
+
+        if (timer > waitTime)
+        {
+            //讓檢察2去等於當前打破數量
+            ballbreaknumber2 = BrickScript.bricksbreak;
+            //把時間歸0
+            timer = timer - waitTime;
+            //如果檢查1等於檢查2
+            if (ballbreaknumber1 == ballbreaknumber2)
+            {
+            //再給予他一個小的力量讓他偏移                 
+            GetComponent<Rigidbody2D>().AddForce(ballInitialForcesmall);                              
+                
+
+
+            }
+
+        }
+        
+
+
+
 
 
     }

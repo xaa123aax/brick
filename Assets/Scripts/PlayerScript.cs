@@ -23,7 +23,7 @@ public class PlayerScript : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {//如果碰到星星
-        if (other.gameObject.CompareTag("star"))
+        if (other.gameObject.CompareTag("bonus1"))
         {
             //破壞星星
             other.gameObject.SetActive(false);
@@ -31,15 +31,14 @@ public class PlayerScript : MonoBehaviour
             playerVelocity= playerVelocity*2 ;
 
         }
-        if (other.gameObject.CompareTag("star2"))
+        if (other.gameObject.CompareTag("bonus2"))
         {
             //破壞星星
             other.gameObject.SetActive(false);
-            //速度變兩倍
-           
+            //速度變兩倍           
 
         }
-        if (other.gameObject.CompareTag("star3"))
+        if (other.gameObject.CompareTag("bonus3"))
         {
             //破壞星星
             other.gameObject.SetActive(false);
@@ -71,7 +70,7 @@ public class PlayerScript : MonoBehaviour
             playerPosition.x = boundaryr;
         }
 
-
+          
     }
 
 }

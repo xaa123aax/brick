@@ -13,10 +13,6 @@ public class GameStatus : MonoBehaviour
     [Header("目前的遊戲狀態")]
     public Status now;
 
-    void Start()
-    {
-
-    }
 
     void Awake()
     {

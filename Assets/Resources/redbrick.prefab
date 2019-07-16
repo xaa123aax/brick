@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6253870187183030499}
   - component: {fileID: 7057874926342410782}
   - component: {fileID: 1356390740343740386}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: redbrick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,4 +121,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitsToKill: 1
   points: 10
-  starcolor: 0
