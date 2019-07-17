@@ -12,21 +12,25 @@ public class GameManager : MonoBehaviour
     public Button restartButton2;
     public GameObject player;
     public GameObject BALL;
-
+    public static int bossHp;
 
     public Text HP;
     public Text SCORE;
+    public Text bossHP;
+    
 
     void Start()
     {
 
-
+        bossHp = 3;
         playerLives = 3;
         playerPoints = 0;
         //剛開始重新開始按鈕不顯示
         restartButton.gameObject.SetActive(false);
         restartButton2.gameObject.SetActive(false);
+       
     }
+   
 
     void Hp()
     {
@@ -38,11 +42,17 @@ public class GameManager : MonoBehaviour
 
         SCORE.text = "分數:" + playerPoints;
     }
+    void BossHp()
+    {
+
+        bossHP.text = "BOSS生命:" +bossHp;
+    }
 
     void Update()
     {
         Hp();
         Score();
+        BossHp();
 
         //如果play死了
         if (GameStatus.Instance.now == GameStatus.Status.Stop)
@@ -56,7 +66,7 @@ public class GameManager : MonoBehaviour
         //如果按下r 刷新當前關卡
         if (Input.GetKeyDown(KeyCode.R))
         {
-            CreateBrick.colormax = CreateBrick.colormax-1;
+            CreateBrick.colormax = CreateBrick.colormax;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             BrickScript.bricksbreak = 0;
         }

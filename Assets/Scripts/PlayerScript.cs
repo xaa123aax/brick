@@ -62,8 +62,13 @@ public class PlayerScript : MonoBehaviour
         {
             //破壞星星
             other.gameObject.SetActive(false);
-            //速度變1/2倍 
+            //生命-1
+            GameManager.playerLives--;
+            if (GameManager.playerLives <= 0)
+            {
 
+                GameStatus.Instance.now = GameStatus.Status.Stop;
+            }
 
 
         }

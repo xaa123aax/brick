@@ -14,6 +14,7 @@ public class BallScript : MonoBehaviour
     public static int ballbreaknumber2;
     private float waitTime = 20.0f;
     public static float timer = 0.0f;
+    
 
     void Start()
     {
@@ -68,6 +69,22 @@ public class BallScript : MonoBehaviour
 
 
         }
+        if (other.gameObject.CompareTag("boss"))
+        {
+            //破壞星星
+            GameManager.bossHp--;
+
+            if (GameManager.bossHp <= 0)
+            {
+                other.gameObject.SetActive(false);
+
+
+            }
+           
+
+
+
+}
 
 
 
@@ -131,12 +148,11 @@ public class BallScript : MonoBehaviour
         //時間每幀增加
         timer += Time.deltaTime;
 
-        Debug.Log(timer);
-        Debug.Log(GetComponent<Rigidbody2D>().velocity);
+ 
 
         //如果時間大於等待時間
 
-        if (timer > waitTime)
+        if (timer > waitTime )
         {
             //讓檢察2去等於當前打破數量
             ballbreaknumber2 = BrickScript.bricksbreak;

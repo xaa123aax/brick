@@ -11,6 +11,7 @@ TagManager:
   - bonus3
   - bonus4
   - bonus5
+  - boss
   layers:
   - Default
   - TransparentFX

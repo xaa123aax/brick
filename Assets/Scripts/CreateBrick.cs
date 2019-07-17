@@ -7,7 +7,7 @@ public class CreateBrick : MonoBehaviour
     public int color;
     public List<Transform> bricks;
     //設定磚塊等級最大值
-    public static int colormax =1;
+    public static int colormax = 1;
 
     void Start()
     {
@@ -16,30 +16,39 @@ public class CreateBrick : MonoBehaviour
         //設一個序列
         bricks = new List<Transform>();
         //產生方塊
-        for (int i = 0; i < 12; i++)
+        if (colormax < 6)
         {
-            //隨機選擇介於1至最大值
-            color = Random.Range(1, colormax);
-            //選擇產生的
-            switch (color)
+            for (int i = 0; i < 12; i++)
             {
-                case 1:
-                    SpawnBrick();
-                    break;
-                case 2:
-                    SpawnBrick2();
-                    break;
-                case 3:
-                    SpawnBrick3();
-                    break;
-                case 4:
-                    SpawnBrick4();
-                    break;
-                default:
-                    SpawnBrick4();
-                    break;
+                //隨機選擇介於1至最大值
+                color = Random.Range(1, colormax);
+                //選擇產生的
+                switch (color)
+                {
+                    case 1:
+                        SpawnBrick();
+                        break;
+                    case 2:
+                        SpawnBrick2();
+                        break;
+                    case 3:
+                        SpawnBrick3();
+                        break;
+                    case 4:
+                        SpawnBrick4();
+                        break;
+                    default:
+                        SpawnBrick4();
+                        break;
 
+                }
             }
+
+        }
+        if (colormax >= 6)
+        {
+            GameObject newBoss = Instantiate(Resources.Load<GameObject>("boss"));
+            newBoss.transform.position = Vector2.zero;
         }
     }
     //選擇x的位置
