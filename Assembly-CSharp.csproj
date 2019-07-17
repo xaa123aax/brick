@@ -60,10 +60,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BossScript.cs" />
     <Compile Include="Assets\Scripts\BallScript.cs" />
+    <Compile Include="Assets\Scripts\BossScript.cs" />
     <Compile Include="Assets\Scripts\BrickScript.cs" />
     <Compile Include="Assets\Scripts\CreateBrick.cs" />
+    <Compile Include="Assets\Scripts\Destroy_After_Seconds.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameStatus.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />

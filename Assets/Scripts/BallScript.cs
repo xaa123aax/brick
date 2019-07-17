@@ -14,10 +14,13 @@ public class BallScript : MonoBehaviour
     public static int ballbreaknumber2;
     private float waitTime = 20.0f;
     public static float timer = 0.0f;
-    
+    private AudioSource sound;
+    public AudioClip hit;
+
 
     void Start()
     {
+        sound = gameObject.AddComponent<AudioSource>();
         //給球一個初始的力量使遊戲開始
         ballInitialForce = new Vector2(100.0f, 300.0f);
         ballInitialForcesmall = new Vector2(300.0f, -300.0f);
@@ -28,9 +31,14 @@ public class BallScript : MonoBehaviour
         //球的位置
         ballPosition = transform.position;
     }
+    void OnCollisionEnter2D(Collision2D other)
 
-    void OnTriggerEnter2D(Collider2D other)
+    {
+        sound.PlayOneShot(hit);
+    }
+        void OnTriggerEnter2D(Collider2D other)
     {//如果碰到星星
+        sound.PlayOneShot(hit);
         if (other.gameObject.CompareTag("bonus1"))
         {
             //破壞星星
@@ -71,6 +79,8 @@ public class BallScript : MonoBehaviour
         }
         if (other.gameObject.CompareTag("boss"))
         {
+
+           
             //破壞星星
             GameManager.bossHp--;
 

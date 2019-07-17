@@ -9,8 +9,10 @@ public class CreateBrick : MonoBehaviour
     //設定磚塊等級最大值
     public static int colormax = 1;
 
+
     void Start()
     {
+       
         //磚塊等級最大值+1
         colormax = colormax + 1;
         //設一個序列

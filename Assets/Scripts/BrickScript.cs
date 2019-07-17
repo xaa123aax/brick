@@ -10,12 +10,14 @@ public class BrickScript : MonoBehaviour
     private int numberOfHits;
     int starcolor;
     public static int bricksbreak=0;
-  
+
+
+
 
     void Start()
     {
         numberOfHits = 0;
-  
+      
 
     }
     //產生紅星星
@@ -53,10 +55,14 @@ public class BrickScript : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other)
+
     {
+       
+
         //如果碰到球
         if (other.gameObject.CompareTag("ball"))
         {
+            
             //計數加1
             numberOfHits++;
             //如果計數等於磚塊死亡撞擊數
