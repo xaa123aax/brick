@@ -36,7 +36,7 @@ public class BallScript : MonoBehaviour
     {
         sound.PlayOneShot(hit);
     }
-        void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {//如果碰到星星
         sound.PlayOneShot(hit);
         if (other.gameObject.CompareTag("bonus1"))
@@ -80,7 +80,7 @@ public class BallScript : MonoBehaviour
         if (other.gameObject.CompareTag("boss"))
         {
 
-           
+
             //破壞星星
             GameManager.bossHp--;
 
@@ -88,13 +88,11 @@ public class BallScript : MonoBehaviour
             {
                 other.gameObject.SetActive(false);
 
+                GameStatus.Instance.now = GameStatus.Status.GameEnd;
 
             }
-           
 
-
-
-}
+        }
 
 
 
@@ -158,24 +156,24 @@ public class BallScript : MonoBehaviour
         //時間每幀增加
         timer += Time.deltaTime;
 
- 
+
 
         //如果時間大於等待時間
 
-        if (timer > waitTime )
+        if (timer > waitTime)
         {
             //讓檢察2去等於當前打破數量
             ballbreaknumber2 = BrickScript.bricksbreak;
             //把時間歸0
             timer = timer - waitTime;
             //如果檢查1等於檢查2
-            if ( ballPosition.x > 0)
+            if (ballPosition.x > 0)
             {
                 //再給予他一個小的力量讓他偏移                 
                 GetComponent<Rigidbody2D>().AddForce(ballInitialForcesmall2);
 
             }
-            if ( ballPosition.x < 0)
+            if (ballPosition.x < 0)
             {
                 //再給予他一個小的力量讓他偏移                 
                 GetComponent<Rigidbody2D>().AddForce(ballInitialForcesmall);

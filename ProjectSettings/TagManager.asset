@@ -12,6 +12,7 @@ TagManager:
   - bonus4
   - bonus5
   - boss
+  - Background Music
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameStatus : MonoBehaviour
 {
-    public enum Status { Menu, Play, Stop, NextLevel };
+    public enum Status { Menu, Play, Stop, GameEnd };
 
     public static GameStatus Instance = null;
 
@@ -43,7 +43,7 @@ public class GameStatus : MonoBehaviour
                
                          
                 break;
-            case Status.NextLevel:
+            case Status.GameEnd:
                 
                 now = Status.Play;
                 break;

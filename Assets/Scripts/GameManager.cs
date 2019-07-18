@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     public Text HP;
     public Text SCORE;
     public Text bossHP;
-    
+    public float pitch; //寫改成的pitch值
+
 
     void Start()
     {
@@ -28,7 +29,8 @@ public class GameManager : MonoBehaviour
         //剛開始重新開始按鈕不顯示
         restartButton.gameObject.SetActive(false);
         restartButton2.gameObject.SetActive(false);
-       
+
+
     }
    
 

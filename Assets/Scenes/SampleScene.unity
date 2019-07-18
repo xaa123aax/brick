@@ -1249,9 +1249,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1562199618}
   - component: {fileID: 1562199617}
+  - component: {fileID: 1562199620}
   m_Layer: 0
   m_Name: Background Music
-  m_TagString: Untagged
+  m_TagString: Background Music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1268,7 +1269,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 55a8599ff83525f448ea66834b8c2484, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1366,6 +1367,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1562199620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562199616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c5bcf20b4ae7854baa164f8a545532b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pitch: 0.7
 --- !u!1001 &1595047524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1483,6 +1497,7 @@ MonoBehaviour:
   HP: {fileID: 117619433}
   SCORE: {fileID: 617891605}
   bossHP: {fileID: 382515731}
+  pitch: 0
 --- !u!4 &1671228578
 Transform:
   m_ObjectHideFlags: 0

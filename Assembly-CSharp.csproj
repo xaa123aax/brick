@@ -64,10 +64,10 @@
     <Compile Include="Assets\Scripts\BossScript.cs" />
     <Compile Include="Assets\Scripts\BrickScript.cs" />
     <Compile Include="Assets\Scripts\CreateBrick.cs" />
-    <Compile Include="Assets\Scripts\Destroy_After_Seconds.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameStatus.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\Soundmanager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>V:/108-中教大-數位-邱奕畯/Brick/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

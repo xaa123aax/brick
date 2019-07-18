@@ -20,11 +20,6 @@ public class BossScript : MonoBehaviour
     void Start()
     {
 
-
-
-
-
-
             speeda = speed * Mathf.Sqrt(2);
             bossPosition = transform.position;
 
@@ -72,12 +67,6 @@ public class BossScript : MonoBehaviour
 
         void Update()
         {
-
-
-
-
-
-
 
 
         bosstimer += Time.deltaTime;
@@ -255,7 +244,7 @@ public class BossScript : MonoBehaviour
 
 
             }
-            Debug.Log(GetComponent<Rigidbody2D>().velocity);
+
         }
     }
 
